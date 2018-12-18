@@ -8,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ContentComponent implements OnInit {
 
   testName = '';
+  freeCardList: string[] = [
+    '2222 users included!!!!!',
+    '1111 GB of storage',
+    'Help center access',
+    'Priority email support'
+  ];
 
   constructor() { }
 

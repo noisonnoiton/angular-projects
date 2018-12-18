@@ -4,8 +4,6 @@
   <button (click)="btnClicked()">Push!</button>
 </div>
 
-<app-detail></app-detail>
-
 <ul>
     <!-- <li>No. {{articles[0].id}} title: {{articles[0].title}}</li>
     <li>No. {{articles[1].id}} title: {{articles[1].title}}</li> -->
@@ -15,7 +13,4 @@
     </li>
 </ul>
 
-<div id="detail" *ngIf="selectedArticle">
-  <h2>{{selectedArticle.id}}</h2>
-  <h3>{{selectedArticle.title}}</h3>
-</div>
+<app-detail [detail]="selectedArticle"></app-detail>

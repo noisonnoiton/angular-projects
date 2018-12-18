@@ -8,10 +8,7 @@
       <div class="card-body">
         <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>10 users included</li>
-          <li>2 GB of storage</li>
-          <li>Email support</li>
-          <li>Help center access</li>
+          <li *ngFor="let item of freeCardList">{{item}}</li>
         </ul>
         <button (click)="freeBtnClicked()" type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
       </div>
@@ -23,10 +20,10 @@
       <div class="card-body">
         <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
         <ul class="list-unstyled mt-3 mb-4">
-          <li>20 users included!!!!!</li>
-          <li>10 GB of storage</li>
-          <li>Priority email support</li>
-          <li>Help center access</li>
+            <li>2220 users included</li>
+            <li>15111 GB of storage</li>
+            <li>Phone and email support</li>
+            <li>Help center access</li>
         </ul>
         <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
       </div>

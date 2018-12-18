@@ -1,0 +1,21 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>게시물 전체보기</h1>
+  <button (click)="btnClicked()">Push!</button>
+</div>
+
+<app-detail></app-detail>
+
+<ul>
+    <!-- <li>No. {{articles[0].id}} title: {{articles[0].title}}</li>
+    <li>No. {{articles[1].id}} title: {{articles[1].title}}</li> -->
+    <li *ngFor="let article of articles">
+      No. {{article.id}}
+      title: <a href="#" (click)="titleClicked(article)">{{article.title}}</a>
+    </li>
+</ul>
+
+<div id="detail" *ngIf="selectedArticle">
+  <h2>{{selectedArticle.id}}</h2>
+  <h3>{{selectedArticle.title}}</h3>
+</div>

@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   articles: Article[];
   selectedArticle: Article;
   users: User[];
+  isError = false;
 
   constructor(private bbsService: BbsService) { }
 
@@ -22,6 +23,9 @@ export class AppComponent implements OnInit {
     this.bbsService.getAllUsersFromGithub()
       .subscribe(res => { // JSON string 을 Object로 변환하여 변수에 담는다,,
         this.users = res;
+      }, error => {
+        this.isError = true;
+        console.log(error);
       });
   }
 

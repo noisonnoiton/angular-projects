@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import Article from '../model/article';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import User from 'src/model/user';
+import {tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +13,15 @@ export class BbsService {
   constructor(private http: HttpClient) {}
 
   // 서비스에는 Observable을 return,,
-  getAllUsersFromGithub(): Observable<any> {
-    return this.http.get('http://localhost:3000/data');
+  getAllUsersFromGithub(): Observable<User[]> {
+    const params = new HttpParams()
+      .set('id', '1')
+      .set('completed', 'false');
+    // return this.http.get<User[]>('http://localhost:3000/data', {params});
+    return this.http.get<User[]>('http://localhost:3000/data')
+      .pipe(
+        tap(res => console.log(res))
+      );
       // .subscribe(function (response) {
       // .subscribe(response => {
       //   console.log(response);

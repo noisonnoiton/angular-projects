@@ -20,7 +20,11 @@ export class BbsService {
     // return this.http.get<User[]>('http://localhost:3000/data', {params});
     return this.http.get<User[]>('http://localhost:3000/data')
       .pipe(
-        tap(res => console.log(res))
+        tap(res => {
+          console.log(res);
+        }, error => {
+          alert('error');
+        })
       );
       // .subscribe(function (response) {
       // .subscribe(response => {

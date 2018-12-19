@@ -23,7 +23,7 @@ export class DetailComponent implements OnInit, OnChanges {
   }
 
   // 데이터 가져와서 준비,, 데이터 초기화,,
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges): void {
     console.log('DetailComponent OnChanges 생성자 실행,,', JSON.stringify(changes));
   }
 

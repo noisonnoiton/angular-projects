@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>게시물 전체보기</h1>
+  <h1>사용자 전체보기</h1>
   <button (click)="btnClicked()">Push!</button>
 </div>
 
@@ -8,9 +8,14 @@
     <!-- <li>No. {{articles[0].id}} title: {{articles[0].title}}</li>
     <li>No. {{articles[1].id}} title: {{articles[1].title}}</li> -->
     <li *ngFor="let article of articles">
-      No. {{article.id}}
-      title: <a href="#" (click)="titleClicked(article)">{{article.title}}</a>
+      No. 
+      ID: 
+      URL: 
     </li>
 </ul>
 
-<app-detail [detail]="selectedArticle"></app-detail>
+<div>
+  {{users}}
+</div>
+
+<!-- <app-detail [detail]="selectedArticle"></app-detail> -->

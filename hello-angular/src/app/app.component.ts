@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import Article from '../model/article';
+import { BbsService } from './bbs.service';
+import User from 'src/model/user';
 
 @Component({
   selector: 'app-root',
@@ -7,18 +9,21 @@ import Article from '../model/article';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
-  articles: Article[] = [
-    {id: 1, title: 'first,,'},
-    {id: 2, title: 'second,,'},
-    {id: 3, title: 'third,,'},
-    {id: 4, title: 'fourth,,'},
-    {id: 5, title: 'fifth,,'},
-    {id: 6, title: 'sixth,,'},
-    {id: 7, title: 'seventh,,'}
-  ];
+export class AppComponent implements OnInit {
 
+  articles: Article[];
   selectedArticle: Article;
+  users: User[];
+
+  constructor(private bbsService: BbsService) { }
+
+  ngOnInit(): void {
+    this.articles = this.bbsService.getAllArticles();
+    this.bbsService.getAllUsersFromGithub()
+      .subscribe(res => {
+        this.users = res;
+      });
+  }
 
   btnClicked() {
     alert('Bonjour,,');

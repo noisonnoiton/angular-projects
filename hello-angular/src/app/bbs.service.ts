@@ -12,7 +12,7 @@ export class BbsService {
 
   // 서비스에는 Observable을 return,,
   getAllUsersFromGithub(): Observable<any> {
-    return this.http.get('https://api.github.com/users')
+    return this.http.get('http://localhost:3000/data');
       // .subscribe(function (response) {
       // .subscribe(response => {
       //   console.log(response);

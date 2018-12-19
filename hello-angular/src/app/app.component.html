@@ -7,15 +7,12 @@
 <ul>
     <!-- <li>No. {{articles[0].id}} title: {{articles[0].title}}</li>
     <li>No. {{articles[1].id}} title: {{articles[1].title}}</li> -->
-    <li *ngFor="let article of articles">
-      No. 
-      ID: 
-      URL: 
+    <li *ngFor="let item of users">
+      No. {{item.id}}
+      ID: {{item.login}}
+      URL: <a [href]="item.url">{{item.url}}</a>
+      <img [src]="item.avatar_url" width="20px">
     </li>
 </ul>
-
-<div>
-  {{users}}
-</div>
 
 <!-- <app-detail [detail]="selectedArticle"></app-detail> -->
